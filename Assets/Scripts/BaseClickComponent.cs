@@ -13,15 +13,22 @@ public class BaseClickComponent : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField]
     private MeshRenderer _gateMaterial;
 
+    [SerializeField]
+    private SkinnedMeshRenderer _unitMeshRenderer;
+
     public static event Action<Gate> _selectedGate;
     public static event Action _dataGate;
+    public static event Action<Unit> _selectedUnit;
+    public static event Action _dataUnit;
 
     private Material _defaultMaterial;
     private Gate _gate;
+    private Unit _unit;
 
     private void Start()
     {
         _gate = GetComponent<Gate>();
+        _unit = GetComponent<Unit>();
     }
 
     //Срабатывает при нажатии кнопки мыши на GameObject.
@@ -47,19 +54,42 @@ public class BaseClickComponent : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     private void SetMaterial()
     {
-        _defaultMaterial = _gateMaterial.material;
-
-        _gateMaterial.material = _highlightMaterial;
+        if (_gateMaterial != null)
+        {
+            _defaultMaterial = _gateMaterial.material;
+            _gateMaterial.material = _highlightMaterial;
+        }
+        else if (_unitMeshRenderer != null)
+        {
+            _defaultMaterial = _unitMeshRenderer.material;
+            _unitMeshRenderer.material = _highlightMaterial;
+        }
     }
 
     private void ResetMaterial()
     {
-        _gateMaterial.material = _defaultMaterial;
+        if (_gateMaterial != null)
+        {
+            _gateMaterial.material = _defaultMaterial;
+        }
+        else if (_unitMeshRenderer != null)
+        {
+            _unitMeshRenderer.material = _defaultMaterial;
+        }
     }
 
     private void OpenSettnigs()
     {
-        _selectedGate?.Invoke(_gate);
-        _dataGate?.Invoke();
+        if (_gateMaterial != null)
+        {
+            _selectedGate?.Invoke(_gate);
+            _dataGate?.Invoke();
+            Debug.Log("А-а-а");
+        }
+        else if( _unitMeshRenderer != null)
+        {
+            _selectedUnit?.Invoke(_unit);
+            _dataUnit?.Invoke();
+        }
     }
 }

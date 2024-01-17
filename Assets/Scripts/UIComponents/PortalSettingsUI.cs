@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PortalSettingsUI : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class PortalSettingsUI : MonoBehaviour
     [SerializeField] private TMP_InputField _missProbability;
     [SerializeField] private TMP_InputField _doubleDamageProbability;
     [SerializeField] private TMP_InputField _probabilityOfStrongOrFastAttack;
+
+    AnimationUI _animUI;
+
+    private void Awake()
+    {
+        _animUI = GetComponent<AnimationUI>();
+    }
 
     private void OnEnable()
     {
@@ -66,5 +74,9 @@ public class PortalSettingsUI : MonoBehaviour
     private void GetGatesAttributes(Gate _gate)
     {
         _gateSettings = _gate;
-    }
+        if (_animUI != null)
+        {           
+            _animUI.OpenUI();
+        }
+    }   
 }
