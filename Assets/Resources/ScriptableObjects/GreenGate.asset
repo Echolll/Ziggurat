@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 150
   _speed: 25
-  _fastAttackDamage: 10
+  _fastAttackDamage: 100
   _strongAttackDamage: 25
   _missProbability: 69.7
   _doubleDamageProbability: 34.5

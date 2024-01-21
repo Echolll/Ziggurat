@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fee97c0314ccd4389de989f89a5cbd, type: 3}
   m_Name: BlueGate
   m_EditorClassIdentifier: 
-  _maxHealth: 500
+  _maxHealth: 100
   _speed: 15
-  _fastAttackDamage: 50
-  _strongAttackDamage: 15
+  _fastAttackDamage: 100
+  _strongAttackDamage: 50
   _missProbability: 57.7
   _doubleDamageProbability: 12.7
   _probabilityOfStrongOrFastAttack: 86.9

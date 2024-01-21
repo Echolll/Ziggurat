@@ -16,18 +16,26 @@ public class HealthComponent : MonoBehaviour
         _unitAnimation = GetComponent<UnitEnvironment>();
     }
 
-    void Update()
-    {
-        
-    }
+    
 
-    private void TakeDamage()
+    public void TakeDamage(float damage)
     {
-
+        if(_maxHealth > 0)
+        {
+            _maxHealth -= damage;
+            _unitAnimation.StartAnimation("Impact");
+            Debug.Log("Урон получен");
+        }
+        else if (_maxHealth <= 0)
+        {
+            OnDeath();
+            Debug.Log("Помер");
+        }
     }
 
     private void OnDeath()
     {
-
+       Destroy(gameObject);
+        _unitAnimation.StartAnimation("Die");
     }
 }

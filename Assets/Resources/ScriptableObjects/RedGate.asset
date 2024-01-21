@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fee97c0314ccd4389de989f89a5cbd, type: 3}
   m_Name: RedGate
   m_EditorClassIdentifier: 
-  _maxHealth: 1500
+  _maxHealth: 250
   _speed: 35
   _fastAttackDamage: 100
-  _strongAttackDamage: 23
-  _missProbability: 10.9
+  _strongAttackDamage: 75
+  _missProbability: 62.8
   _doubleDamageProbability: 91.4
   _probabilityOfStrongOrFastAttack: 56.2

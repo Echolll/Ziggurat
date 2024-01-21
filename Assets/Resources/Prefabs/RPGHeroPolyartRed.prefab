@@ -1799,6 +1799,7 @@ GameObject:
   - component: {fileID: 7986788596145947126}
   - component: {fileID: 7995339674218275668}
   - component: {fileID: 7971482898358105656}
+  - component: {fileID: 5631347735125087560}
   m_Layer: 0
   m_Name: PolyartSword
   m_TagString: Untagged
@@ -1888,10 +1889,25 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.2, y: 1.08, z: 0.06}
   m_Center: {x: 0, y: -0.7, z: 0}
+--- !u!114 &5631347735125087560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973101130614883438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11fa642d40afb845a64c9a256eb9eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstEnemy: Blue
+  _secondEnemy: Green
+  _damage: 0
 --- !u!1 &7973102733352975706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,7 +2327,7 @@ GameObject:
   - component: {fileID: -2347670725949244236}
   m_Layer: 0
   m_Name: RPGHeroPolyartRed
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2487,6 +2503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetPosition: {fileID: 0}
+  _firstTagName: Green
+  _secondTagName: Blue
 --- !u!114 &-6334475130829077303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,6 +2529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1c832fa7c210d438ae6e96cb2c64f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sword: {fileID: 7973101130614883438}
 --- !u!1 &7973312293858233878
 GameObject:
   m_ObjectHideFlags: 0
